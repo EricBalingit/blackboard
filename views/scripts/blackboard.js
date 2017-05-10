@@ -324,20 +324,18 @@
     } );
     
     socket.on ( 'leave', function ( userId ) {
+        
         $ui.id.chatContent.append ( `<div class='post'><p>BLACKBOARD: ${users [ userId ].name} left the session.</p></div>` );
+        
         delete users [ userId ];
     } );
     
     socket.on ( 'begin-plot',  function ( userId, plot ) {
         users [ userId ].currentPlot = plot;
-        
-        console.log ( userId, 'started plotting' );
     } );
     
     socket.on ( 'update-plot', function ( userId, data ) {
-        users [ userId ].currentPlot.data.concat ( data );
-        
-        console.log ( userId, 'is plotting' );
+        Array.prototype.push.apply ( users [ userId ].currentPlot.data, data );
     } );
     
     socket.on ( 'end-plot', function ( userId, data ) {
@@ -345,15 +343,15 @@
         
         user.currentPlot.data.concat ( data );
         renderUserPlot ( user, outputContext );
-        user.currentPlot = null;
         
-        console.log ( userId, 'stopped plotting' );
+        user.currentPlot = null;
     } );
     
     socket.on ( 'update-user', function ( userId, mouseX, mouseY ) {
         var user = users [ userId ];
         user.mouseX = mouseX;
-        user.mouseY = mouseY; 
+        user.mouseY = mouseY;
+        
     } );
     
     socket.on ( 'change-color', function ( userId, color ) {

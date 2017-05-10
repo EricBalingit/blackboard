@@ -41,8 +41,6 @@ io.on ( 'connection', function ( socket ) {
     
     socket.on ( 'leave', function ( userId ) {
         
-        console.log ( users [ userId ].name, 'left the session.' );
-        
         socket.broadcast.emit ( 'leave', userId );
         delete users [ userId ];
     } );
@@ -70,9 +68,7 @@ io.on ( 'connection', function ( socket ) {
     
     socket.on ( 'update-user', function ( userId, mouseX, mouseY ) {
         var user = users [ userId ];
-        
-        console.log ( userId, 'sent an update' );
-        
+
         user.mouseX = mouseX;
         user.mouseY = mouseY;
         
