@@ -1,0 +1,20 @@
+append content
+    #layout.flex-fill.flex-parent.row.layout-row
+        .flex-70.flex-parent.column.row-item
+            #blackboard.flex-70.flex-parent.column.column-item
+                canvas#output-canvas.flex-fill.inset
+                #input-canvas-container.flex-parent.column
+                    canvas#input-canvas.flex-fill.inset
+            .flex-30.flex-parent.column.column-item
+                textarea(id='chat-input' class='flex-fill column-item inset' placeholder='Say something!')
+                #user-input.flex-parent.column
+                    .flex-parent.row.column-item
+                        .flex-fill.flex-parent.column.row-item.inset
+                            #palette.flex-fill
+                        .flex-parent.column.row-item
+                            .flex-fill.flex-parent.row.flex-middle
+                                input(id='user-submit' type='button' value='Submit' )
+        .flex-30.flex-parent.column.row-item
+            .flex-fill.scroll-parent.inset
+                .scroll-wrapper.flex-none.flex-parent.column
+                    #chat-content.scroll-content.flex-fill

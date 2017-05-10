@@ -1,0 +1,11 @@
+{
+    "name": "forum-blackboard",
+    "version": "0.0.1",
+    "description": "node, express, socket-io collaborative blackboard for internal use",
+    "license": "ICU",
+    "dependencies": {
+        "express": "4.14.1",
+        "pug": "2.0.0-beta11",
+        "socket.io": "1.7.3"
+    }
+}

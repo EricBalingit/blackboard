@@ -1,0 +1,221 @@
+/*#region main layout */
+
+/* reset, hr margin: 0 fix for flexbox */
+code, body, div, form, h1, h2, h3, h4, h5, h6, hr, html, input, li, ol, option, p, pre, select, table, textarea, ul {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: #111;
+}
+
+body {
+	background-color: #222;
+	color: #deb;
+	font-family: tahoma, sans-serif;
+	font-size: 12pt;
+	position: absolute;
+	margin: 0.5em;
+	padding: 0.5em;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+div, ul, ol {
+	font-family: inherit;
+	line-height: inherit;
+	letter-spacing: 0.08em;
+}
+
+ol li, ul li {
+	margin-left: 2em;
+}
+
+input[type=button], input[type=submit] {
+	font-size: 1.1em;
+	padding: 0.1em 1em;
+	background-color: #222;
+	border: 1px outset lightgray;
+	border-radius: 0.2em;
+	color: inherit;
+}
+
+input[type=button]:hover, form input[type=submit] {
+	background-color: #444;
+}
+
+input[type=button]:active, form input[type=submit] {
+	border: 1px inset lightgray;
+	background-color: #333;
+}
+
+textarea {
+	line-height: 1.5;
+	padding: 1em;
+	font-family: monospace, monospace;
+	background: rgb(50,50,50);
+	border: 1px inset darkgray;
+	color: inherit;
+	resize: none;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.5;
+}
+
+/*	Golden Diatonic scale for font headings:
+	http://spencermortensen.com/articles/typographic-scale/
+*/
+h1 { font-size: 2.62em; }
+
+h2 { font-size: 2.06em; }
+
+h3 { font-size: 1.62em; }
+
+h4 { font-size: 1.27em; }
+
+h5 { font-size: 1.0em; }
+
+h6 { font-size: 0.79em; }
+
+.flex-parent { display: flex; }
+
+.flex-left { justify-content: flex-start; }
+
+.flex-center { justify-content: center; }
+
+.flex-right { justify-content: flex-end; }
+
+.flex-middle { align-items: center; }
+
+.column { flex-direction: column; }
+
+.row { flex-direction: row; }
+
+.flex-fill { flex: 1; }
+
+.flex-spaced { flex: 1 0 0; }
+
+.flex-shared { flex: 1 0 auto; }
+
+.flex-none { flex: 0 0 auto; }
+
+.flex-70 { flex: 4; }
+
+.flex-30 { flex: 1.5; }
+
+.flex-wrap { flex-wrap: wrap; }
+
+.flex-nowrap { flex-wrap: nowrap; }
+
+.layout-column { padding: 0.25em 0.5em; }
+
+.layout-row { padding: 0.5em 0.25em; }
+
+.column-item:first-child {
+	margin-bottom: 0.25em;
+}
+
+.column-item:last-child {
+	margin-top: 0.25em;
+}
+
+.column-item:not(:first-child):not(:last-child) {
+	margin-top: 0.25em;
+	margin-bottom: 0.25em;
+}
+
+.row-item:first-child {
+	margin-right: 0.5em;
+}
+
+.row-item:last-child {
+	margin-left: 0.5em;
+}
+
+.row-item:not(:first-child):not(:last-child) {
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+}
+
+.scroll-parent { position: relative; overflow: hidden; }
+
+.inset { border: 1px inset darkgray; background: #111; }
+
+.scroll-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	background-color: #111;
+	padding: 1em;
+}
+
+.scroll-content {
+	padding: 0.5em;
+	background: transparent;
+}
+
+.left { float: left; }
+
+.right { float: right; }
+
+.align-left { text-align: left; }
+
+.align-right { text-align: right; }
+
+.center { text-align: center; }
+
+.border-north { border-top: 1px solid darkgray; }
+
+.border-east { border-right: 1px solid darkgray; }
+
+.border-south { border-bottom: 1px solid darkgray; }
+
+.border-west { border-left: 1px solid darkgray; }
+
+/*#endregion */
+
+
+/*#region UI controls */
+
+#blackboard {
+	position: relative;
+	cursor: none;
+}
+
+#input-canvas-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: transparent;
+}
+
+#input-canvas {
+	background-color: transparent;
+}
+
+#palette {
+	height: 2em;
+	position: relative;
+	cursor: pointer;
+}
+
+/*#endregion */
+
+
+/*#region overides */
+
+.hidden { display: none; }
+
+/*#endregion */

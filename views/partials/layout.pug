@@ -1,0 +1,13 @@
+doctype html
+html
+	head
+		title#page-title Forum Blackboard
+		link(rel='stylesheet', type='text/css', href='css/site.css')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.slim.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js')
+	body#page.flex-parent.column
+		.flex-fill.flex-parent.column
+			h3#page-heading.column-item.center Forum Blackboard
+			hr.column-item
+			block content
+		block app-scripts
